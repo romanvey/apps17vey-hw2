@@ -2,8 +2,8 @@ import java.time.LocalDateTime;
 
 public class RidePerDayChecker extends SkiPassChecker {
 
-    public RidePerDayChecker(int rides){
-        super(rides);
+    public RidePerDayChecker(SkiPassRidesAmount skiPassRidesAmount){
+        super(skiPassRidesAmount);
     }
 
     @Override

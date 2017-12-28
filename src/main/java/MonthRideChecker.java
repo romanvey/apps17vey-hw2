@@ -1,8 +1,8 @@
 import java.time.LocalDateTime;
 
 public class MonthRideChecker extends SkiPassChecker {
-    public MonthRideChecker(int rides){
-        super(rides);
+    public MonthRideChecker(SkiPassRidesAmount skiPassRidesAmount){
+        super(skiPassRidesAmount);
     }
 
     @Override

@@ -11,8 +11,8 @@ public class DifferentSkiPassesTest {
         System.out.println("Different SkiPassTypes test");
         SkiPassFactory factory = new SkiPassFactory();
         Terminal terminal = new Terminal(factory);
-        ISkiPass skiPass1 = terminal.createSkiPass(SkiPassType.WEEKEND, new RideChecker(1));
-        ISkiPass skiPass2 = terminal.createSkiPass(SkiPassType.WEEKDAY, new RideChecker(1));
+        ISkiPass skiPass1 = terminal.createSkiPass(SkiPassType.WEEKEND, new RideChecker(SkiPassRidesAmount.ONE));
+        ISkiPass skiPass2 = terminal.createSkiPass(SkiPassType.WEEKDAY, new RideChecker(SkiPassRidesAmount.ONE));
         System.out.println(skiPass1);
         System.out.println(skiPass2);
         skiPass1.useRide(LocalDateTime.now());
@@ -26,7 +26,7 @@ public class DifferentSkiPassesTest {
         System.out.println("Block test");
         SkiPassFactory factory = new SkiPassFactory();
         Terminal terminal = new Terminal(factory);
-        ISkiPass skiPass1 = terminal.createSkiPass(SkiPassType.ALL, new RidePerDayChecker(5));
+        ISkiPass skiPass1 = terminal.createSkiPass(SkiPassType.ALL, new RidePerDayChecker(SkiPassRidesAmount.TEN));
         System.out.println(skiPass1);
 
         skiPass1.useRide(LocalDateTime.now());
@@ -48,7 +48,7 @@ public class DifferentSkiPassesTest {
         System.out.println("No rides test");
         SkiPassFactory factory = new SkiPassFactory();
         Terminal terminal = new Terminal(factory);
-        ISkiPass skiPass1 = terminal.createSkiPass(SkiPassType.ALL, new RideChecker(1));
+        ISkiPass skiPass1 = terminal.createSkiPass(SkiPassType.ALL, new RideChecker(SkiPassRidesAmount.ONE));
         System.out.println(skiPass1);
         skiPass1.useRide(LocalDateTime.now());
         System.out.println(skiPass1);
@@ -61,7 +61,7 @@ public class DifferentSkiPassesTest {
         System.out.println("No rides per day test");
         SkiPassFactory factory = new SkiPassFactory();
         Terminal terminal = new Terminal(factory);
-        ISkiPass skiPass1 = terminal.createSkiPass(SkiPassType.ALL, new RidePerDayChecker(1));
+        ISkiPass skiPass1 = terminal.createSkiPass(SkiPassType.ALL, new RidePerDayChecker(SkiPassRidesAmount.ONE));
         System.out.println(skiPass1);
         skiPass1.useRide(LocalDateTime.now());
         System.out.println(skiPass1);
@@ -77,7 +77,7 @@ public class DifferentSkiPassesTest {
         System.out.println("No rides per month test");
         SkiPassFactory factory = new SkiPassFactory();
         Terminal terminal = new Terminal(factory);
-        ISkiPass skiPass1 = terminal.createSkiPass(SkiPassType.ALL, new MonthRideChecker(1));
+        ISkiPass skiPass1 = terminal.createSkiPass(SkiPassType.ALL, new MonthRideChecker(SkiPassRidesAmount.ONE));
         System.out.println(skiPass1);
         skiPass1.useRide(LocalDateTime.now());
         System.out.println(skiPass1);
